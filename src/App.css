@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  src: url('./fonts/Spartan-Regular.ttf');
-  font-family: "spartan-reg";
+  src: url('./fonts/Spartan-Medium.ttf');
+  font-family: "spartan-med";
 }
 
 @font-face {
@@ -20,9 +20,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "spartan-reg";
+  font-family: "spartan-med";
 }
 
 p {
   font-family: "spartan-light";
+}
+
+#desktop-nav {
+  height: 100vh;
+  /* display: inline-block; */
+  /* max-width: 50px; */
+  /* background-color: red; */
+  /* position: absolute; */
 }
