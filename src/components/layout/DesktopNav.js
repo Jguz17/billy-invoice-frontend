@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from "./logo.svg"
 import moonLogo from "../layout/moon.svg"
-import avatar from "../layout/avatar-1.png"
 const DesktopNav = () => {
     return (
         <div id="desktop-nav">
