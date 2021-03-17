@@ -9,6 +9,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import SendIcon from '@material-ui/icons/Send';
 import Checkbox from '@material-ui/core/Checkbox';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 const StyledMenu = withStyles({
   paper: {
@@ -62,7 +63,7 @@ export default function CustomizedMenus() {
         onClick={handleClick}
         style={{ textTransform: "none", marginRight: "1rem", borderRadius: "2rem", boxShadow: "none", padding: ".5rem 1rem", backgroundColor: "#7C5DFA" }}
       >
-        Filter By Status
+        Filter By Status <KeyboardArrowDownIcon/>
       </Button>
       <StyledMenu
         id="customized-menu"
@@ -74,15 +75,15 @@ export default function CustomizedMenus() {
       >
         <StyledMenuItem>
           <Checkbox/>
-          <ListItemText primary="Sent mail" />
+          <ListItemText primary="Draft" />
         </StyledMenuItem>
         <StyledMenuItem>
           <Checkbox/>
-          <ListItemText primary="Sent mail" />
+          <ListItemText primary="Pending" />
         </StyledMenuItem>
         <StyledMenuItem>
           <Checkbox/>
-          <ListItemText primary="Sent mail" />
+          <ListItemText primary="Paid" />
         </StyledMenuItem>
         
       </StyledMenu>
