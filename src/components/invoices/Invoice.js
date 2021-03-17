@@ -2,7 +2,9 @@ import React from 'react'
 import InvoiceItem from "./InvoiceItem"
 import plusLogo from "../layout/plus-circle.svg"
 import Dropdown from "../layout/Dropdown"
+import Button from '@material-ui/core/Button'
 const InvoiceData = require("../../data.json")
+const uniqid = require('uniqid');
 
 const Invoice = () => {
     return (
@@ -15,11 +17,11 @@ const Invoice = () => {
                     </div>
                     <div style={{ display: "flex", alignItems: "center" }}>
                         <Dropdown/>
-                        <button style={{ backgroundColor: "#7C5DFA", border: "none", padding: ".5rem 1rem", color: "white", borderRadius: "2rem", display: "flex", alignItems: "center", outline: "none" }}><img src={plusLogo} style={{ marginRight: ".5rem" }}/>New Invoice</button>
+                        <Button style={{ backgroundColor: "#7C5DFA", border: "none", padding: ".5rem 1rem", color: "white", borderRadius: "2rem", display: "flex", alignItems: "center", outline: "none" }}><img src={plusLogo} alt="Plus sign logo" style={{ marginRight: ".5rem" }}/>New Invoice</Button>
                     </div>
                 </header>
                 {InvoiceData.map(invoiceItem => {
-                    return <InvoiceItem invoiceItem={invoiceItem}/>
+                    return <InvoiceItem key={uniqid()} invoiceItem={invoiceItem}/>
                 })}
             </div>
         </div>
