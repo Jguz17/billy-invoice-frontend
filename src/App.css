@@ -34,3 +34,7 @@ p {
   /* background-color: red; */
   /* position: absolute; */
 }
+
+#test {
+  background-image: url("./components/layout/avatar-1.png");
+}
