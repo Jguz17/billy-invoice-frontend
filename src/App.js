@@ -1,12 +1,14 @@
 import './App.css';
 import Invoice from "./components/invoices/Invoice" 
-import DesktopNav from "./components/layout/DesktopNav"
+import Nav from "./components/layout/Nav"
+import MobileNav from "./components/layout/MobileNav"
 
 function App() {
   return (
     <div className="App">
-      <div style={{ display: "flex" }}>
-        <DesktopNav/>
+      <div id="invoice-page-container">
+        <Nav/>
+        <MobileNav />
         <Invoice/>
       </div>
     </div>

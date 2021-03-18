@@ -22,13 +22,13 @@ const InvoiceItem = (props) => {
 
     const shortDate = `${date} ${shortMonth} ${year}`
     return (
-        <div style={{ display: "flex", padding: "1.5rem", justifyContent: "space-between", backgroundColor: "#fff", marginBottom: ".5rem", boxShadow: "0px 3px 5px 0px rgba(0,0,0,0.05)", borderRadius: "5px", alignItems: "center" }}>
-            <div style={{ width: "150px" }}><h3><span style={{ color: "#888EB0" }}>#</span>{props.invoiceItem.id}</h3></div>
-            <div style={{ width: "150px", color: "#888EB0" }}><p>Due {shortDate}</p></div>
-            <div style={{ width: "150px", color: "#888EB0" }}><p>{props.invoiceItem.clientName}</p></div>
-            <div style={{ width: "150px", textAlign: "center" }}><h3>${props.invoiceItem.total}</h3></div>
-            <div style={{ width: "125px", height: "50px", backgroundColor: `${bgColor}`, color: `${color}`, display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "5px" }}><FiberManualRecordIcon fontSize="small" style={{ marginRight: ".25rem" }}/><p>{props.invoiceItem.status.charAt(0).toUpperCase() + props.invoiceItem.status.slice(1)}</p></div>
-            <KeyboardArrowRightIcon style={{ color: "#7C5DFA" }}/>
+        <div id="invoice-item-container">
+            <div><h3><span style={{ color: "#888EB0" }}>#</span>{props.invoiceItem.id}</h3></div>
+            <div style={{ color: "#888EB0"}}><p>Due {shortDate}</p></div>
+            <div className="text-align-center" style={{ color: "#888EB0" }}><p>{props.invoiceItem.clientName}</p></div>
+            <div className="text-align-center"><h3>${props.invoiceItem.total}</h3></div>
+            <div className="" style={{ width: "150px", height: "50px", backgroundColor: `${bgColor}`, color: `${color}`, display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "5px" }}><FiberManualRecordIcon fontSize="small" style={{ marginRight: ".25rem" }}/><p>{props.invoiceItem.status.charAt(0).toUpperCase() + props.invoiceItem.status.slice(1)}</p></div>
+            <KeyboardArrowRightIcon id="right-arrow" style={{ color: "#7C5DFA" }}/>
         </div>
     )
 }
