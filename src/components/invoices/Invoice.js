@@ -8,8 +8,8 @@ const uniqid = require('uniqid');
 
 const Invoice = () => {
     return (
-        <div style={{ backgroundColor: "#f8f8fb", width: "100%" }}>
-            <div style={{ margin: "2.5rem auto", maxWidth: "1000px" }}>
+        <div id="invoice-container" >
+            <div id="invoice-wrapper" >
                 <header style={{ display: "flex", padding: "5px", justifyContent: "space-between", marginBottom: "2.5rem"}}>
                     <div>
                         <h2 style={{ width: "150px", fontSize: "2rem"}}>Invoices</h2>

@@ -32,6 +32,10 @@ p {
   font-family: "spartan-med";
 }
 
+#invoice-page-container {
+  display: flex;
+}
+
 #desktop-nav {
   height: 100vh;
   position: fixed;
@@ -45,5 +49,87 @@ p {
   background-image: url("./components/layout/avatar-1.jpg");
 }
 
-/* dropdown */
+#invoice-container {
+  background-color: #f8f8fb;
+  width: 100%;
+  padding-left: 75px;
+}
 
+#invoice-wrapper {
+  margin: 2.5rem auto;
+  max-width: 1000px
+}
+
+#invoice-item-container {
+  display: flex;
+  padding: 1.5rem;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-bottom: .5rem;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.05);
+  border-radius: 5px;
+  align-items: center;
+}
+
+#invoice-item-container div {
+  width: 150px;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+#mobile-nav {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  #invoice-wrapper {
+    width: 85%
+  }
+  #invoice-item-container {
+    padding: .75rem;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  #desktop-nav {
+    display: block;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #mobile-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #mobile-nav div {
+    display: flex;
+    align-items: center;
+  }
+  #invoice-page-container {
+    display: block;
+  }
+  #invoice-item-container {
+    overflow: auto;
+  }
+  #right-arrow {
+    /* display: none; */
+  }
+  #invoice-item-container .text-align-center {
+    text-align: left;
+  }
+  #invoice-wrapper {
+    margin: 0 auto;
+  }
+  #invoice-container {
+    padding-left: 0;
+  }
+  #desktop-nav {
+    display: none;
+  }
+}
