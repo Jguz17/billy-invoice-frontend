@@ -45,5 +45,19 @@ p {
   background-image: url("./components/layout/avatar-1.jpg");
 }
 
-/* dropdown */
+#invoice-container {
+  background-color: #f8f8fb;
+  width: 100%;
+  padding-left: 75px;
+}
 
+#invoice-wrapper {
+  margin: 2.5rem auto;
+  max-width: 1000px
+}
+
+@media only screen and (max-width: 1200px) {
+  #invoice-wrapper {
+    width: 85%
+  }
+}
