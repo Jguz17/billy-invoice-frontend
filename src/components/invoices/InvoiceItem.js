@@ -14,7 +14,6 @@ const InvoiceItem = (props) => {
         bgColor = "#FFF9F0"
     } 
 
-    var  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var d = new Date(props.invoiceItem.date);
     let shortMonth = d.toLocaleString('en-us', { month: 'short' }); /* Jun */
     let date = d.getDate()
@@ -24,12 +23,12 @@ const InvoiceItem = (props) => {
 
     return (
         <div id="invoice-item-container">
-            <div><h3><span style={{ color: "#888EB0" }}>#</span>{props.invoiceItem.id}</h3></div>
-            <div style={{ color: "#888EB0"}}><p>Due {shortDate}</p></div>
-            <div className="text-align-center" style={{ color: "#888EB0" }}><p>{props.invoiceItem.client_name}</p></div>
+            <div><h3><span className="light-purple-color">#</span>{props.invoiceItem.id}</h3></div>
+            <div className="light-purple-color"><p>Due {shortDate}</p></div>
+            <div className="text-align-center light-purple-color"><p>{props.invoiceItem.client_name}</p></div>
             <div className="text-align-center"><h3>${props.invoiceItem.total}</h3></div>
-            <div className="" style={{ width: "150px", height: "50px", backgroundColor: `${bgColor}`, color: `${color}`, display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "5px" }}><FiberManualRecordIcon fontSize="small" style={{ marginRight: ".25rem" }}/><p>{props.invoiceItem.status.charAt(0).toUpperCase() + props.invoiceItem.status.slice(1)}</p></div>
-            <KeyboardArrowRightIcon id="right-arrow" style={{ color: "#7C5DFA" }}/>
+            <div className="status" style={{ backgroundColor: `${bgColor}`, color: `${color}`}}><FiberManualRecordIcon fontSize="small" className="xs-margin-right"/><p>{props.invoiceItem.status.charAt(0).toUpperCase() + props.invoiceItem.status.slice(1)}</p></div>
+            <KeyboardArrowRightIcon id="right-arrow"/>
         </div>
     )
 }

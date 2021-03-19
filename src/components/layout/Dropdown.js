@@ -28,14 +28,6 @@ const StyledMenu = withStyles({
 ));
 
 const StyledMenuItem = withStyles((theme) => ({
-//   root: {
-//     '&:focus': {
-//       backgroundColor: theme.palette.primary.main,
-//       '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-//         color: theme.palette.common.white,
-//       },
-//     },
-//   },
 }))(MenuItem);
 
 export default function CustomizedMenus() {
@@ -52,12 +44,12 @@ export default function CustomizedMenus() {
   return (
     <div>
       <Button
+        id="dropdown-button"
         aria-controls="customized-menu"
         aria-haspopup="true"
         variant="contained"
         color="primary"
         onClick={handleClick}
-        style={{ textTransform: "none", marginRight: "1rem", borderRadius: "2rem", boxShadow: "none", padding: ".5rem 1rem", backgroundColor: "#7C5DFA" }}
       >
         Filter By Status <KeyboardArrowDownIcon/>
       </Button>
@@ -67,7 +59,6 @@ export default function CustomizedMenus() {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
-        style={{ marginTop: "1rem" }}
       >
         <StyledMenuItem>
           <Checkbox/>
