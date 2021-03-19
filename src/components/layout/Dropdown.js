@@ -30,7 +30,7 @@ const StyledMenu = withStyles({
 const StyledMenuItem = withStyles((theme) => ({
 }))(MenuItem);
 
-export default function CustomizedMenus() {
+export default function CustomizedMenus(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -51,7 +51,7 @@ export default function CustomizedMenus() {
         color="primary"
         onClick={handleClick}
       >
-        Filter By Status <KeyboardArrowDownIcon/>
+        {props.text} <KeyboardArrowDownIcon/>
       </Button>
       <StyledMenu
         id="customized-menu"

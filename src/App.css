@@ -143,11 +143,15 @@ p {
   max-width: 1000px
 }
 
-#invoice-header {
+.desktop-header {
   display: flex;
-  padding: 5px;
+  padding: 2.5rem 5px;
   justify-content: space-between;
-  margin-bottom: 2.5rem;
+  /* margin-bottom: 2.5rem; */
+}
+
+.mobile-header {
+  display: none;
 }
 
 #invoice-header-actions {
@@ -257,5 +261,14 @@ p {
   }
   #desktop-nav {
     display: none;
+  }
+}
+@media only screen and (max-width: 660px) {
+  
+  .desktop-header {
+    display: none;
+  }
+  .mobile-header {
+    display: flex;
   }
 }

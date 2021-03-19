@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import InvoiceItem from "./InvoiceItem"
-import plusLogo from "../layout/plus-circle.svg"
-import Dropdown from "../layout/Dropdown"
-import Button from '@material-ui/core/Button'
+import DesktopHeaderContent from "../layout/desktop/DesktopHeaderContent"
+import MobileHeaderContent from "../layout/mobile/MobileHeaderContent"
 
 const Invoice = () => {
 
@@ -17,15 +16,9 @@ const Invoice = () => {
     return (
         <div id="invoice-container" >
             <div id="invoice-wrapper" >
-                <header id="invoice-header">
-                    <div>
-                        <h2 className="header2">Invoices</h2>
-                        <p>There are {invoices.length} total invoices</p>
-                    </div>
-                    <div id="invoice-header-actions">
-                        <Dropdown/>
-                        <Button id="invoice-header-button"><img src={plusLogo} alt="plus"/>New Invoice</Button>
-                    </div>
+                <header>
+                    <DesktopHeaderContent invoices={invoices}/>
+                    <MobileHeaderContent  invoices={invoices}/>
                 </header>
                 
                 {invoices && invoices.map(invoiceItem => {
