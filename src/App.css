@@ -32,21 +32,54 @@ p {
   font-family: "spartan-med";
 }
 
-#invoice-page-container {
-  display: flex;
-}
+/* ======== DESKTOP NAV STYLES ======== */
 
 #desktop-nav {
   height: 100vh;
   position: fixed;
-  /* display: inline-block; */
-  /* max-width: 50px; */
-  /* background-color: red; */
-  /* position: absolute; */
 }
 
-#test {
+#desktop-nav-img {
+  max-width: 75px;
+  z-index: 9999;
+}
+
+#desktop-nav-body {
+  position: relative;
+  background-color: #373B53;
+  height: 94.5vh;
+  width: 75px;
+  margin-top: -2rem;
+  z-index: -1;
+  border-bottom-right-radius: 1.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#desktop-nav-avatar {
   background-image: url("./components/layout/avatar-1.jpg");
+  border-radius: 50%;
+  width: 60%;
+  height: 50px;
+  background-color: #7E88C3;
+  margin: 1rem auto;
+  background-size: cover;
+}
+
+.nav-hr {
+  border-color: #7E88C3;
+}
+
+#desktop-nav-moon {
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem .5rem;
+}
+
+/* ======== INVOICE STYLES ======== */
+
+#invoice-page-container {
+  display: flex;
 }
 
 #invoice-container {
