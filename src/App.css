@@ -152,6 +152,14 @@ p {
 
 .mobile-header {
   display: none;
+  padding: 2.5rem 5px;
+  justify-content: space-between;
+}
+
+#mobile-header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #invoice-header-actions {
@@ -167,6 +175,7 @@ p {
   display: flex;
   align-items: center;
   outline: none;
+  text-transform: none;
 }
 
 #invoice-header-button img {
@@ -206,7 +215,7 @@ p {
 }
 
 .header2 {
-  width: 150px;
+  /* width: 150px; */
   font-size: 2rem;
 }
 
@@ -270,5 +279,49 @@ p {
   }
   .mobile-header {
     display: flex;
+  }
+  .header2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .header2 {
+    font-size: 1.25rem;
+  }
+  #invoice-header p {
+    font-size: .75rem;
+  }
+  #dropdown-button {
+    text-transform: none;
+    margin-right: .5rem;
+    border-radius: 1.5rem;
+    box-shadow: none;
+    padding: .5rem;
+    background-color: #7C5DFA;
+  }
+  #invoice-header-button {
+    background-color: #7C5DFA;
+    border: none;
+    padding: .5rem;
+    color: white;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    outline: none;
+    text-transform: none;
+  }
+  
+  #invoice-header-button img {
+    margin-right: .5rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .header2 {
+    font-size: 1rem;
+  }
+  #invoice-header p {
+    font-size: .55rem;
   }
 }
