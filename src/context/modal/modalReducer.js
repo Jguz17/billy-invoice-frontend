@@ -10,6 +10,11 @@ export default (state, action) => {
                 ...state,
                 modalIsOn: action.payload
             }
+        case TURN_OFF_MODAL: 
+            return {
+                ...state,
+                modalIsOn: action.payload
+            }
         default:
             return state
     }

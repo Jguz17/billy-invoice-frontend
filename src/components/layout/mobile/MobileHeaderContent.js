@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import plusLogo from "../../layout/plus-circle.svg"
 import Dropdown from "../../layout/Dropdown"
 import Button from '@material-ui/core/Button'
-
+import ModalContext from "../../../context/modal/modalContext"
 
 const MobileHeaderContent = (props) => {
+
+    const modalContext = useContext(ModalContext)
+
+    const { turnOnModal } = modalContext
+    
     return (
         <div className="mobile-header" id="invoice-header">
             <div id="mobile-header-container">
@@ -13,7 +18,7 @@ const MobileHeaderContent = (props) => {
             </div>
             <div id="invoice-header-actions">
                 <Dropdown text="Filter"/>
-                <Button id="invoice-header-button"><img src={plusLogo} alt="plus"/>New</Button>
+                <Button onClick={() => turnOnModal()} id="button"><img src={plusLogo} alt="plus"/>New</Button>
             </div>
         </div>
     )

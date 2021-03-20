@@ -15,17 +15,31 @@ const ModalState = (props) => {
     const [state, dispatch] = useReducer(modalReducer, initialState)
 
     // turn on modal
-    const turnOnModal = (x) => {
+    const turnOnModal = () => {
+        const bodyElm = document.querySelector('body')
+        window.scrollTo(0, 0);
+        bodyElm.style.overflow = "hidden"
         dispatch({
             type: TURN_ON_MODAL,
-            payload: x
+            payload: true
+        })
+    }
+
+    // turn off modal
+    const turnOffModal = () => {
+        const bodyElm = document.querySelector('body')
+        bodyElm.style.overflow = "initial"
+        dispatch({
+            type: TURN_OFF_MODAL,
+            payload: false
         })
     }
 
     return (
         <ModalContext.Provider value={{
             modalIsOn: state.modalIsOn,
-            turnOnModal
+            turnOnModal,
+            turnOffModal
         }}>
             {props.children}
         </ModalContext.Provider>

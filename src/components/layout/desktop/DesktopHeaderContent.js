@@ -18,7 +18,7 @@ const DesktopHeaderContent = (props) => {
             </div>
             <div id="invoice-header-actions">
                 <Dropdown text="Filter by status"/>
-                <Button onClick={() => turnOnModal(true)} id="invoice-header-button"><img src={plusLogo} alt="plus"/>New Invoice</Button>
+                <Button onClick={() => turnOnModal()} id="button"><img src={plusLogo} alt="plus"/>New Invoice</Button>
             </div>
         </div>
     )
