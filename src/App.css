@@ -262,6 +262,7 @@ p {
 
 #modal-main div {
   display: flex;
+  justify-content: space-between;
 }
 
 #modal-button-container {
@@ -326,6 +327,21 @@ p {
   }
   #invoice-item-date {
     display: none;
+  }
+  #date-and-total {
+    flex-direction: column;
+
+  }
+  #modal-main {
+    width: 75%;
+    height: 60%;
+  
+  }
+  .w-100 {
+    width: 100%;
+  }
+  #date {
+    margin-bottom: 1rem;
   }
 }
 @media only screen and (max-width: 660px) {
