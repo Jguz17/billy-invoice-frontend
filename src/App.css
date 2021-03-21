@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #f8f8fb;
+}
+
 @font-face {
   src: url('./fonts/Spartan-Medium.ttf');
   font-family: "spartan-med";
@@ -143,18 +147,30 @@ p {
   max-width: 1000px
 }
 
-#invoice-header {
+.desktop-header {
   display: flex;
-  padding: 5px;
+  padding: 2.5rem 5px;
   justify-content: space-between;
-  margin-bottom: 2.5rem;
+  /* margin-bottom: 2.5rem; */
+}
+
+.mobile-header {
+  display: none;
+  padding: 2.5rem 5px;
+  justify-content: space-between;
+}
+
+#mobile-header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #invoice-header-actions {
   display: flex;
   align-items: center;
 }
-#invoice-header-button {
+#button {
   background-color: #7C5DFA;
   border: none;
   padding: .5rem 1rem;
@@ -163,9 +179,10 @@ p {
   display: flex;
   align-items: center;
   outline: none;
+  text-transform: none;
 }
 
-#invoice-header-button img {
+#button img {
   margin-right: .5rem;
 }
 
@@ -202,7 +219,7 @@ p {
 }
 
 .header2 {
-  width: 150px;
+  /* width: 150px; */
   font-size: 2rem;
 }
 
@@ -213,6 +230,55 @@ p {
 .xs-margin-right {
   margin-right: .25rem;
 }
+
+#ghost {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: black;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  opacity: .3;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+#modal-main {
+  width: 40%;
+  height: 45%;
+  background-color: white;
+  position: absolute;
+  z-index: 100001;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-main div {
+  display: flex;
+}
+
+#modal-button-container {
+  width: 65%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fluid {
+  width: 80%;
+}
+
+.fluid-s {
+  width: 50%;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 1200px) {
   #invoice-wrapper {
     width: 85%
@@ -257,5 +323,62 @@ p {
   }
   #desktop-nav {
     display: none;
+  }
+  #invoice-item-date {
+    display: none;
+  }
+}
+@media only screen and (max-width: 660px) {
+  
+  .desktop-header {
+    display: none;
+  }
+  .mobile-header {
+    display: flex;
+  }
+  .header2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .header2 {
+    font-size: 1.25rem;
+  }
+  #invoice-header p {
+    font-size: .75rem;
+  }
+  #dropdown-button {
+    text-transform: none;
+    margin-right: .5rem;
+    border-radius: 1.5rem;
+    box-shadow: none;
+    padding: .5rem;
+    background-color: #7C5DFA;
+  }
+  #button {
+    background-color: #7C5DFA;
+    border: none;
+    padding: .5rem;
+    color: white;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    outline: none;
+    text-transform: none;
+  }
+  
+  #button img {
+    margin-right: .5rem;
+  }
+  
+}
+
+@media only screen and (max-width: 320px) {
+  .header2 {
+    font-size: 1rem;
+  }
+  #invoice-header p {
+    font-size: .55rem;
   }
 }
