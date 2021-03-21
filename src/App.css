@@ -241,8 +241,8 @@ p {
 }
 
 #modal-main {
-  width: 45%;
-  height: 50%;
+  width: 40%;
+  height: 45%;
   background-color: white;
   position: absolute;
   z-index: 100001;
@@ -250,6 +250,29 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-main div {
+  display: flex;
+}
+
+#modal-button-container {
+  width: 65%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fluid {
+  width: 80%;
+}
+
+.fluid-s {
+  width: 50%;
+  margin: 0 auto;
 }
 
 @media only screen and (max-width: 1200px) {
