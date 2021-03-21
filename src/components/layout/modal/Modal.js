@@ -28,15 +28,23 @@ const Modal = () => {
             [e.target.name]: e.target.value
         })
     }
+
+    const clearFields = () => {
+        document.getElementsByName("client_name")[0].value = ""
+        document.getElementsByName("address")[0].value = ""
+        document.getElementsByName("date")[0].value = ""
+        document.getElementsByName("total")[0].value = ""
+    }
     
 
     return (
         <div id="modal-main">
-            <TextField onChange={onChange} className="fluid" id="outlined-search" name="client_name" label="Client Name" type="search" variant="outlined" />
-            <TextField className="fluid" id="outlined-search" label="Street Address" type="search" variant="outlined" />
+            <TextField onChange={onChange} className="form-field fluid" id="outlined-search" name="client_name" label="Client Name" type="search" variant="outlined" />
+            <TextField className="form-field fluid" id="outlined-search" name="address" label="Street Address" type="search" variant="outlined" />
             <div>
                 <TextField className="fluid-s"
                     id="date"
+                    className="form-field"
                     label="Invoice date"
                     type="date"
                     onChange={onChange}
@@ -45,12 +53,16 @@ const Modal = () => {
                     shrink: true,
                     }}
                 />
-                <TextField onChange={onChange} name="total" className="fluid-s" id="outlined-search" label="Enter total" type="search" variant="outlined" />
+                <TextField className="form-field" onChange={onChange} name="total" className="fluid-s" id="outlined-search" label="Enter total" type="search" variant="outlined" />
                 
             </div>
             <div id="modal-button-container">
                 <Button style={{ backgroundColor: "#F9FAFE", color: "#7E88C3" }} className="fluid-s" onClick={() => turnOffModal()} id="button"><HighlightOffIcon className="xs-margin-right"/> Cancel</Button>
-                <Button className="fluid-s" onClick={() => addInvoice(invoice)} id="button">Submit</Button>
+                <Button className="fluid-s" onClick={() => { 
+                    addInvoice(invoice) 
+                    clearFields()
+                    turnOffModal()
+                }} id="button">Submit</Button>
             </div>
         </div>
     )
