@@ -39,9 +39,9 @@ const Modal = () => {
 
     return (
         <div id="modal-main">
-            <TextField onChange={onChange} className="form-field fluid" id="outlined-search" name="client_name" label="Client Name" type="search" variant="outlined" />
-            <TextField className="form-field fluid" id="outlined-search" name="address" label="Street Address" type="search" variant="outlined" />
-            <div>
+            <TextField onChange={onChange} className="fluid" id="outlined-search" name="client_name" label="Client Name" type="search" variant="outlined" />
+            <TextField className="fluid" id="outlined-search" name="address" label="Street Address" type="search" variant="outlined" />
+            <div id="date-and-total" className="fluid">
                 <TextField className="fluid-s"
                     id="date"
                     className="form-field"
@@ -53,7 +53,7 @@ const Modal = () => {
                     shrink: true,
                     }}
                 />
-                <TextField className="form-field" onChange={onChange} name="total" className="fluid-s" id="outlined-search" label="Enter total" type="search" variant="outlined" />
+                <TextField className="form-field" onChange={onChange} name="total" className="fluid-s w-100" id="outlined-search" label="Enter total" type="search" variant="outlined" />
                 
             </div>
             <div id="modal-button-container">
