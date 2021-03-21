@@ -324,6 +324,9 @@ p {
   #desktop-nav {
     display: none;
   }
+  #invoice-item-date {
+    display: none;
+  }
 }
 @media only screen and (max-width: 660px) {
   
@@ -368,6 +371,7 @@ p {
   #button img {
     margin-right: .5rem;
   }
+  
 }
 
 @media only screen and (max-width: 320px) {

@@ -31,7 +31,7 @@ const InvoiceItem = (props) => {
     return (
         <div id="invoice-item-container">
             <div><h3><span className="light-purple-color">#</span>{props.invoiceItem.id}</h3></div>
-            <div className="light-purple-color"><p>Due {shortDate}</p></div>
+            <div id="invoice-item-date" className="light-purple-color"><p>Due {shortDate}</p></div>
             <div className="text-align-center light-purple-color"><p>{props.invoiceItem.client_name}</p></div>
             <div className="text-align-center"><h3>${props.invoiceItem.total}</h3></div>
             <div className="status" style={{ backgroundColor: `${bgColor}`, color: `${color}`}}><FiberManualRecordIcon fontSize="small" className="xs-margin-right"/><p>{props.invoiceItem.status ? props.invoiceItem.status.charAt(0).toUpperCase() + props.invoiceItem.status.slice(1) : `${props.invoiceItem.status}`}</p></div>
