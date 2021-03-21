@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+import InvoiceContext from "../../context/invoice/invoiceContext"
+import CancelIcon from '@material-ui/icons/Cancel';
 
 const InvoiceItem = (props) => {
+
+    const invoiceContext = useContext(InvoiceContext)
+
+    const { deleteInvoice } = invoiceContext
+
     let color = "#373B53"
     let bgColor = "#F4F4F5"
 
@@ -24,11 +31,11 @@ const InvoiceItem = (props) => {
     return (
         <div id="invoice-item-container">
             <div><h3><span className="light-purple-color">#</span>{props.invoiceItem.id}</h3></div>
-            <div className="light-purple-color"><p>Due {shortDate}</p></div>
+            <div id="invoice-item-date" className="light-purple-color"><p>Due {shortDate}</p></div>
             <div className="text-align-center light-purple-color"><p>{props.invoiceItem.client_name}</p></div>
             <div className="text-align-center"><h3>${props.invoiceItem.total}</h3></div>
-            <div className="status" style={{ backgroundColor: `${bgColor}`, color: `${color}`}}><FiberManualRecordIcon fontSize="small" className="xs-margin-right"/><p>{props.invoiceItem.status.charAt(0).toUpperCase() + props.invoiceItem.status.slice(1)}</p></div>
-            <KeyboardArrowRightIcon id="right-arrow"/>
+            <div className="status" style={{ backgroundColor: `${bgColor}`, color: `${color}`}}><FiberManualRecordIcon fontSize="small" className="xs-margin-right"/><p>{props.invoiceItem.status ? props.invoiceItem.status.charAt(0).toUpperCase() + props.invoiceItem.status.slice(1) : `${props.invoiceItem.status}`}</p></div>
+            <CancelIcon style={{ color: "#f50057" }} onClick={() => deleteInvoice(props.invoiceItem.id)} id="right-arrow"/>
         </div>
     )
 }
