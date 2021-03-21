@@ -1,2 +1,13 @@
 export const TURN_ON_MODAL = "TURN_ON_MODAL"
 export const TURN_OFF_MODAL = "TURN_OFF_MODAL"
+
+export const GET_INVOICES = "GET_INVOICES"
+export const ADD_INVOICE = "ADD_INVOICE"
+export const DELETE_INVOICE = "DELETE_INVOICE"
+// export const SET_CURRENT = "SET_CURRENT"
+// export const CLEAR_CURRENT = "CLEAR_CURRENT"
+// export const UPDATE_INVOICE = "UPDATE_INVOICE"
+// export const FILTER_INVOICES = "FILTER_INVOICES"
+// export const CLEAR_INVOICES = "CLEAR_INVOICES"
+// export const CLEAR_FILTER = "CLEAR_FILTER"
+

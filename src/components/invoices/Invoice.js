@@ -1,23 +1,23 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import InvoiceItem from "./InvoiceItem"
 import DesktopHeaderContent from "../layout/desktop/DesktopHeaderContent"
 import MobileHeaderContent from "../layout/mobile/MobileHeaderContent"
 import ModalContext from "../../context/modal/modalContext"
+import InvoiceContext from "../../context/invoice/invoiceContext"
+
 import Ghost from "../layout/Ghost"
 import Modal from "../layout/modal/Modal"
 
 const Invoice = () => {
 
     const modalContext = useContext(ModalContext)
+    const invoiceContext = useContext(InvoiceContext)
 
     const { modalIsOn } = modalContext
-
-    const [invoices, setInvoices] = useState(0);
+    const { invoices, getInvoices } = invoiceContext
 
     useEffect(() => {
-        fetch("https://billy-invoice-api.herokuapp.com/invoices")
-        .then(res => res.json())
-        .then(data => setInvoices(data))
+        getInvoices()
     }, [])
 
     return (

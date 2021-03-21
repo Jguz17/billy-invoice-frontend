@@ -3,18 +3,21 @@ import Invoice from "./components/invoices/Invoice"
 import Nav from "./components/layout/Nav"
 import MobileNav from "./components/layout/MobileNav"
 import ModalState from "./context/modal/ModalState"
+import InvoiceState from "./context/invoice/InvoiceState"
 
 function App() {
   return (
-    <ModalState>
-      <div className="App">
-        <div id="invoice-page-container">
-          <Nav/>
-          <MobileNav />
-          <Invoice/>
+    <InvoiceState>
+      <ModalState>
+        <div className="App">
+          <div id="invoice-page-container">
+            <Nav/>
+            <MobileNav />
+            <Invoice/>
+          </div>
         </div>
-      </div>
-    </ModalState>
+      </ModalState>
+    </InvoiceState>
   );
 }
 
